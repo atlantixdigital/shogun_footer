@@ -1,0 +1,9 @@
+@import "../scss/global.scss";
+
+.site-footer{
+    background: $body-background; color: $white-color;
+
+    ul{
+        margin: 0; list-style: none;
+    }
+}

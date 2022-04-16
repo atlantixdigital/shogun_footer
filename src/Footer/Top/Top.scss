@@ -1,0 +1,12 @@
+@import "../../scss/global.scss";
+
+.footer-top-section{
+    padding: 140px 0;
+
+    @include tablet{
+        padding-top: 60px;
+    }
+    @include mobile{
+        padding-bottom: 96px;
+    }
+}

@@ -1,0 +1,155 @@
+@import "../../../scss/global.scss";
+
+.col-footer-logo{
+    width: 28%;
+  
+    @include tablet{
+        width: 45%;
+    }
+    @include tablet-small{
+        width: 40%;
+    }
+    @include mobile{
+        width: 100%; text-align: center; margin-bottom: 40px;
+    }
+}
+
+.col-footer-navigation{
+    width: 72%;
+
+    @include tablet{
+        width: 55%;
+    }
+    @include tablet-small{
+        width: 60%;
+    }
+    @include mobile{
+        width: 100%;
+    }
+
+    .col{
+        max-width: 25%;
+
+        @include tablet{
+            width: 50%; max-width: 50%;
+        }
+        @include mobile{
+            width: 100%; max-width: 100%;
+        }
+
+        &:nth-child(3), &:nth-child(4){
+            @include tablet{
+                margin-top: 98px;
+            }
+            @include mobile{
+                margin-top: 0;
+            }
+
+        }
+
+        &.col-product-nav{
+            @include mobile{
+                margin-bottom: 45px;
+            }
+        }
+    }
+}
+
+.nav-title{
+    margin-bottom: 30px; font-size: 18px; font-weight: 900; line-height: 1;
+
+    @include tablet{
+        margin-bottom: 18px;
+    }
+    @include mobile{
+        font-size: 15px; line-height: 20px; margin-bottom: 13px; padding-left: 10px; padding-right: 10px;
+    }
+}
+
+.toggle-title{
+    @include mobile{
+        margin-bottom: 0; padding: 20px 0; cursor: pointer; border-bottom: 1px solid $white-color;
+        padding-left: 10px; padding-right: 10px; position: relative;
+    }
+
+    .expand{
+        display: none;
+
+        &:before{
+            width: 10px; height: 2px; content: " "; background: $white-color; position: absolute; @include transform(translate(-50%, -50%));
+            top: 50%; left: 50%;
+        }
+        &:after{
+            width: 2px; height: 10px; content: " "; background: $white-color; position: absolute; @include transform(translate(-50%, -50%));
+            top: 50%; left: 50%;
+        }
+
+        @include mobile{
+            display: block; position: absolute; right: 10px; top: 50%; @include transform(translate(0, -50%));
+            width: 10px; height: 10px;
+        }
+    }
+
+    &.active{
+        .expand{
+            &:after{
+                display: none;
+            }
+        }
+    }
+}
+
+.toggle-content{
+    @media screen and (min-width:768px) {
+        display: block !important;
+        height: auto !important;
+    }
+    @include mobile{
+        display: block;
+    }
+
+    .footer-nav-list{
+        @include mobile{
+            padding-top: 20px; padding-bottom: 40px; margin-left: 20px;
+        }
+    }
+}
+
+.toggle-title{
+    &.active{
+        + .toggle-content{
+            @include mobile{
+                transition: 0.5s ease-in 0.3s;
+                display: block;
+            }
+        }
+    }
+}
+
+.product-nav-list{
+    @include mobile{
+        @include display-flex(flex);  @include align-item(center); @include justify-content(space-between);
+        max-width: 315px; padding-left: 10px; padding-right: 10px;
+    }
+
+    div{
+        + div{
+            @include mobile{
+                margin: 0;
+            }
+        }
+    }
+}
+
+.product-icon{
+    img{
+        max-height: 20px; @include transition(all 0.2s ease);
+    }
+    &:hover{
+        img{
+            @include desktop-only{
+                @include transform(translate(5px, 0));
+            }
+        }
+    }
+}
